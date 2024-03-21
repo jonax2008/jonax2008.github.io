@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ismari & Jonathan :: Nuestra Boda</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="fonts/fonts.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			var foto = document.getElementById('foto');
+			var portada = document.getElementById('portada');
+			var botonAbrir = document.getElementById('btnAbrir');
+			var texto = document.getElementById('texto');
+			var coleccionBtn = document.querySelectorAll('.btn-siguiente');
+
+			botonAbrir.addEventListener('click', function() {
+				portada.style.display = 'none';
+				texto.style.display = 'block';
+
+				setTimeout(function() {
+					texto.classList.toggle('fade');
+				}, 500);
+
+				/*setTimeout(function() {
+					foto.style.display = 'none';
+				}, 3000);
+
+				setTimeout(function() {
+					texto.style.display = 'block';
+				}, 3500);
+
+				setTimeout(function() {
+					texto.classList.toggle('fade');
+				}, 4500);*/
+			});
+
+			Array.prototype.forEach.call(coleccionBtn, function(boton) {
+				boton.addEventListener('click', cambiarPagina);
+			});
+		});
+
+		function cambiarPagina() {
+			var boton = this;
+			var paginaActual = document.querySelector(boton.dataset.current);
+			var paginaSiguiente = document.querySelector(boton.dataset.target);
+			var displayType = boton.dataset.target == '#invitacion' ? 'flex' : 'block';
+
+			setTimeout(function() {
+				paginaActual.classList.toggle('fade');
+			}, 500);
+
+			setTimeout(function() {
+				paginaActual.style.display = 'none';
+			}, 1500);
+
+
+			setTimeout(function() {
+				paginaSiguiente.style.display = displayType;
+			}, 1500);
+
+			setTimeout(function() {
+				paginaSiguiente.classList.toggle('fade');
+			}, 2000);
+
+			console.log(this.dataset.target);
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="invitacion" id="portada">
+			<span class="iniciales">
+				<!--  
+				<p class="text-left">I</p>
+				<p>&</p>
+				<p class="text-right">J</p>
+				-->
+				<p>I & J</p>
+			</span>
+			<div class="liston-container">
+				<div class="liston">
+					<button id="btnAbrir">Abrir Invitaci&oacute;n</button>
+				</div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="invitacion fade" id="texto">
+			<div class="parrafo">
+				<p>
+					"As&iacute; que no son ya m&aacute;s dos, sino una sola carne; por tanto, lo que Dios uni&oacute;, no lo separe el hombre."
+					<br><small  class="cita">Mateo 19:6</small>
+				</p>
+				<p>
+					Hoy nuestros caminos se unen para convertirse en uno solo. 
+					Nuestro amor hoy es sellado en la uni&oacute;n de nuestras vidas, gracias damos a Dios por permitirnos
+					comenzar nuestra historia juntos.
+				</p>
+				<span class="iniciales iniciales-sm">
+					Ismari & Jonathan
+				</span>
+			</div>
+			<div class="liston-container">
+				<div class="liston">
+					<button class="btn-siguiente" data-target="#foto"  data-current="#texto">Siguiente</button>
+				</div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="invitacion fade" id="foto">
+			<div class="img-container">
+				<div>
+					<img src="img/nosotros.jpeg" alt="">
+				</div>
+			</div>
+			<span class="iniciales iniciales-md">¡Nos casamos!</span>
+			<div class="liston-container">
+				<div class="liston">
+					<button class="btn-siguiente" data-target="#invitacion" data-current="#foto">Siguiente</button>
+				</div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="invitacion fade" id="invitacion">
+			<div>
+				<p class="nombre-invitado"><b>Benjam&iacute;n Palestino</b></p>
+				<p>
+					Nos sentimos muy felices y queremos que nos acompa&ntilde;es a celebrar nuestra uni&oacute;n en matrimonio
+				</p>
+				<p class="fecha">
+					20 DE JUNIO DE 2020
+				</p>
+			</div>
+			<div class="direccion">
+				<p><b>CEREMONIA</b></p>
+				<p>IGLESIA LA LUZ DEL MUNDO</p>
+				<p class="hora">12:00 PM</p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.3781725954964!2d-96.90129418461187!3d19.525371242766024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85db32220bec6535%3A0x83fbe7a5fcd4b9c6!2sLa%20Luz%20del%20Mundo!5e0!3m2!1ses!2smx!4v1620433936976!5m2!1ses!2smx" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				<p class="ubicacion">
+					Av. 20 de Noviembre #592, Col. A&acute;lvaro Obreg&oacute;n, Xalapa-Enríquez
+				</p>
+			</div>
+			<div class="direccion">
+				<p><b>FESTEJO</b></p>
+				<p>SAL&Oacute;N ATENAS</p>
+				<p class="hora">1:30 PM</p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d940.0604940742327!2d-96.89993967063903!3d19.531222299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85db321f8ac2553b%3A0x7f1fdafcc722222c!2sSalones%20de%20Eventos%20Atenas%20Xalapa!5e0!3m2!1ses!2smx!4v1620854512909!5m2!1ses!2smx" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				<p class="ubicacion">
+					Av. de la Rep&uacute;blica #18, Agua Santa 2, Xalapa-Enríquez
+				</p>
+			</div>
+			<div>
+				<div class="invitados">
+					<i class="fas fa-male"></i> 3 PERSONAS
+				</div>
+			</div>
+			<div>
+				<div class="checkbox">
+					<input type="checkbox" name="checkbox" id="checkbox1">
+					<label for="checkbox1">Confirmar asistencia</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

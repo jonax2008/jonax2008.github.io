@@ -1,0 +1,241 @@
+	
+	@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		font-size: 24px;
+		font-family: 'Quicksand', Arial, sans-serif;
+		background: #fff;
+	}
+	.container{
+		width: 75%;
+		max-width: 750px;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		height: 100vh;
+		border: 0.7em solid #fff0d9;
+		border-top: none;
+		border-bottom: none;
+		flex-wrap: wrap;
+	}
+	.invitacion{
+		width: 100%;
+		text-align: center;
+		transition: opacity 2s;
+		opacity: 1;
+	}
+	.invitacion h1{
+		font-size: 5em;
+	}
+	.invitacion h2{
+		font-size: 4em;
+	}
+	.invitacion h3{
+		font-size: 3em;
+	}
+	.invitacion h4{
+		font-size: 1.8em;
+	}
+	.iniciales {
+		font-size: 6em;
+		font-family: 'Miama', Arial, sans-serif;
+		text-shadow: 15px 25px 10px #c9c9c9;
+		display: inline-block;
+	}
+	.iniciales.iniciales-md{
+		font-size: 4em;
+		margin-top: 1em;
+	}
+	.iniciales.iniciales-sm{
+		font-size: 3em;
+		margin-top: 1em;
+	}
+	#foto, #texto, #iglesia, #salon, #invitacion{
+		display: none;
+	}
+	.liston-container{
+		height: 4em;
+		margin-top: 3em;
+	}
+	.liston{
+		position: relative;
+		z-index: 3;
+		margin: auto;
+		width: 110%;
+		background: #d9534f;
+		height: 3em;
+		left: -5%;
+		display: flex;
+	    align-items: center;
+	    justify-content: center;
+
+	}
+	.liston-container button{
+		position: absolute;
+		/*z-index: 5;
+		left: 45%;
+		bottom: 16%;*/
+		text-transform: uppercase;
+		padding: 1em 4em;
+		background: #fff;
+		letter-spacing: 4px;
+		border: 3px solid #eee;
+		border-radius: 4px;
+		transition: all 0.3s ease;
+		font-family: inherit;
+	}
+	button:hover{
+		cursor: pointer;
+		background-color: #d9534f;
+	    box-shadow: 0px 15px 20px rgb(0 0 0 / 30%);
+	    transform: translateY(-3px);
+	    color: #fff;
+	}
+	.fade{
+		opacity: 0 !important;
+	}
+
+	.img-container{
+		width: 60%;
+		transform: rotate(-2deg);
+		position: relative;
+		margin: auto;
+		margin-bottom: 1em;
+	}
+	.img-container div{
+		border:1em solid #fff0d9;
+		width: auto;
+		z-index:8;
+		box-shadow: 5px 10px 5px #c9c9c9;
+		background: #fff0d9;
+	}
+	.img-container img{
+		width: 100%;
+		z-index: 10;
+		position: relative;
+	}
+	.text-left{
+		text-align: left;
+	}
+	.text-right{
+		text-align: right;
+	}
+	.invitacion .parrafo{
+		padding: 3em;
+		letter-spacing: 2px;
+	}
+	.cita{
+		font-style: italic;
+		margin: 2em 0;
+		display: inline-block;
+	}
+	iframe{
+		width: 100%;
+	}
+	#invitacion.invitacion{
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	#invitacion div{
+		width: 100%;
+	}
+	#invitacion .direccion{
+		width: 50%;
+		padding: 0.5em;
+	}
+	.nombre-invitado{
+		display: inline-block;
+		margin-bottom: 1em;
+		text-shadow: 15px 25px 10px #c9c9c9;
+		font-size: 2em;
+	}
+	.hora{
+		display: inline-block;
+		background: #d9534f;
+		padding: 0.5em 1em;
+		font-weight: bold;
+		color: white;
+		margin: 0.8em 0;
+	}
+	.ubicacion{
+		font-size: 75%;
+	}
+	#invitacion .invitados{
+		background: #d9534f;
+		padding: 1em;
+		font-weight: bold;
+		color: white;
+		margin: 0.8em auto;
+		width: 50%;
+		margin-top: 1em;
+	}
+
+	.radio label,
+	.checkbox label {
+		display: inline-block;
+		cursor: pointer;
+		color: #d9534f;
+		position: relative;
+		padding: 5px 15px 5px 61px;
+		font-size: 1em;
+		border-radius: 5px;
+		-webkit-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		transition: all 0.3s ease; 
+	}
+	.radio label:hover,
+	.checkbox label:hover {
+		background: rgba(255, 65, 54, 0.1); 
+	}
+	.radio label:before,
+	.checkbox label:before {
+		content: "\f0c8";
+		display: inline-block;
+		position: absolute;
+		left: 15px;
+		border-radius: 50%;
+		background: none;
+		font-family: "Font Awesome 5 Pro";
+		top: 7px;
+	}
+	input[type="radio"] {
+		display: none; 
+	}
+	input[type="radio"]:checked + label:before {
+		content: "\f14a";
+	}
+	input[type="radio"]:checked + label {
+		padding: 5px 25px;
+		background: #d9534f;
+		border-radius: 2px;
+		color: #fff; 
+	}
+	.checkbox label:before {
+		border-radius: 3px; 
+	}
+	.checkbox input[type="checkbox"] {
+		display: none; 
+	}
+	.checkbox input[type="checkbox"]:checked + label:before {
+		content: "\f14a";
+		position: absolute;
+		font-family: "Font Awesome 5 Pro";
+	}
+	.checkbox input[type="checkbox"]:checked + label {
+		background: #d9534f;
+		color: #fff;
+		padding: 5px 15px 5px 51px;
+	}
+
+	/*@media (min-width: 768px) and (max-width: 991px) {
+		.liston-container button{
+			left: 38%;
+			bottom: 16%;
+		}
+	}*/
